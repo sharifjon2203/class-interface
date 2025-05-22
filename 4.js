@@ -1,10 +1,11 @@
 var BankAccount = /** @class */ (function () {
-    function BankAccount(name, acountNumber) {
+    function BankAccount(name, acountNum) {
         this.balance = 0;
         this.ownerName = name;
-        this.accountNumber = accountNumber;
+        this.accountNumber = acountNum;
     }
     BankAccount.prototype.getBalance = function () {
+        console.log(this.balance);
         return this.balance;
     };
     BankAccount.prototype.deposit = function (amount) {
@@ -23,7 +24,6 @@ var BankAccount = /** @class */ (function () {
     Object.defineProperty(BankAccount.prototype, "editName", {
         set: function (name) {
             this.ownerName = name;
-            return true;
         },
         enumerable: false,
         configurable: true
@@ -33,3 +33,5 @@ var BankAccount = /** @class */ (function () {
 }());
 var person = new BankAccount("John", "2093458938");
 person.getBalance();
+person.editName = "JOhn Doe";
+console.log(person.getName);

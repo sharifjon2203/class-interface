@@ -5,12 +5,13 @@ class BankAccount {
     static bankName: string = "Bank"
 
 
-    constructor(name: string, acountNumber: string) {
+    constructor(name: string, acountNum: string) {
         this.ownerName = name
-        this.accountNumber = accountNumber
+        this.accountNumber = acountNum
     }
 
     getBalance() {
+        console.log(this.balance)
         return this.balance
     }
 
@@ -25,13 +26,16 @@ class BankAccount {
         return this.ownerName
     }
 
-    set editName(name: string): boolean {
+    set editName(name: string) {
         this.ownerName = name
-        return this.ownerName
     }
 
 }
 
 const person = new BankAccount("John", "2093458938")
 person.getBalance()
+person.editName = "JOhn Doe"
+
+console.log(person.getName)
+
 
